@@ -7,13 +7,16 @@ L'obiettivo del progetto è quello di creare un'applicazione web in grado di res
 Consente dato una posizione geografica (latitudine e longitudine) di sapere la farmacia più vicina 
 
 Input: [45.459839, 9.147159] 
+
 Output: Farmacia S. Caterina Dott.ssa Protasoni Gloria Luisa Maria 
 
 # La versione avanzata: 
 Consente dato un indirizzo di sapare la farmacia più vicina e conoscere il tempo a piedi e in macchina necessario per raggiungerla
 
 Input: Via Gardone 22 Milano
+
 Output: Azienda Farmaceutica Municipale n.13 
+
 Travel times: 5min (walk), 3min (car) 
 
 # Tecnologie:
