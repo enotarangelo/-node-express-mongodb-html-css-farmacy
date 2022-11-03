@@ -1,28 +1,33 @@
 {
   "name": "cherry-farmacy",
   "version": "1.0.0",
-  "description": "",
+  "description": "L'obiettivo del progetto è quello di creare un'applicazione web in grado di restituire la farmacia di Milano più vicina in base a delle coordinate geografiche oppure un indirzzo.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.1",
-    "ejs": "^3.1.8",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
     "haversine-distance": "^1.2.1",
     "http": "^0.0.1-security",
-    "jquery": "^3.6.1",
     "jsdom": "^20.0.2",
     "mongodb": "^4.11.0",
     "node-geocoder": "^4.2.0",
     "node-html-parser": "^6.1.1",
     "nodemon": "^2.0.20",
     "path": "^0.12.7",
-    "promise": "^8.3.0",
-    "pug": "^3.0.2"
-  }
+    "promise": "^8.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/enotarangelo/node-express-mongodb-html-css-farmacy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/enotarangelo/node-express-mongodb-html-css-farmacy/issues"
+  },
+  "homepage": "https://github.com/enotarangelo/node-express-mongodb-html-css-farmacy#readme"
 }
