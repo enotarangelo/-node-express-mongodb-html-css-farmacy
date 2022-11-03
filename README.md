@@ -21,6 +21,7 @@ Travel times: 5min (walk), 3min (car)
 
 # Tecnologie:
 front-end: HTML, CSS
+
 back-end: nodejs, express, mongodb 
 
 # File:
@@ -39,7 +40,9 @@ back-end: nodejs, express, mongodb
 - Scaricare nodejs  [Node.js website](https://nodejs.org/) 
 - Verificare la corretta installazione:
 node --version
+
 npm --version
+
 - aprire un editor e invia il comando:
 npm init
 Segui gli step e rispondi alle domande
