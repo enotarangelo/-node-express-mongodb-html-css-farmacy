@@ -39,19 +39,29 @@ back-end: nodejs, express, mongodb
 # Per eseguire l'applicazione è necessario:
 - Scaricare nodejs  [Node.js website](https://nodejs.org/) 
 - Verificare la corretta installazione:
+
 node --version
 
 npm --version
 
 - aprire un editor e invia il comando:
+
 npm init
+
 Segui gli step e rispondi alle domande
+
 - Installa nodemon con il seguente comando: 
+
 npm i -g nodemon
+
 - Scaricare le dependencies presenti in package.json con il seguente comando:
+
 npm i -g "nome dependencies"
+
 - Eseguire il comando: 
+
 npm start
+
 - è necessario inoltre installare mongodb in locale o collegarsi in remote per creare un db di nome 'farmacy' e
 popolarlo con le informazioni presenti a questo link https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano
 - Cercando localhost:3000 e scrindo delle coordinate geografiche oppure un indirizzo comparirà il risultato per ripetere la ricerca cliccare in alto a sinistra sulla ciliegia 
