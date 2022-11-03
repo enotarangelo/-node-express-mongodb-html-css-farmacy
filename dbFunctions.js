@@ -11,7 +11,7 @@ module.exports = {
 
 	getCoordinates: async (lon, lat) => {
 		return await db.collection(coll).find({ "geometry.coordinates": { $near: { $geometry: { type: "Point" , coordinates: [lon ,  lat]}}}}).toArray()
-	},
+	}
 	
 }
 
