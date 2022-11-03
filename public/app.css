@@ -4,6 +4,7 @@
 body{
     font-family: 'ComoW01-Bold';
     font-size: 25px;
+    overflow-x: hidden;
 }
 
 ul, .intro, .search, .explanation, footer, .search, .intro{
@@ -21,16 +22,22 @@ li {
     color: #2F4858;  
 }
 
-.explanation{
+.explanation, .explanation_res{
     background-color: #FC2438;  
     color:#FFF;
     text-align: left;
+    padding-top: 2%;
+}
+
+.explanation_res{
+    text-align: center;
 }
 
 .search{
     font-family: 'ComoW01-Light';
     font-weight: bold;
-    
+    background-color: #FFF;
+    padding-top: 5%;
 }
 
 label{
@@ -45,6 +52,12 @@ input[type=button], input[type=submit], input[type=reset], button,footer{
     color:#FFF;
     font-size: medium;
 }
+
+#result{
+    padding-bottom: 5%;
+    display: none; 
+}
+
 
 footer, .search, .intro{
     border-radius: 0%;

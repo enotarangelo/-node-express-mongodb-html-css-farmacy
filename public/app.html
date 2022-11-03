@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script type="text/javascript" src="./app.js"></script>
   <title>Cherry | Farmacy</title>
   <!-- icon -->
   <link rel="shortcut icon" href="./img/logo.webp" type="image/x-icon" />
@@ -26,35 +27,54 @@
   <img src="./img/logo_farmacy.png" style="width:15%" alt="Image">
   <h1>Cherry <span style="color:#FC2438">Farmacy</span></h1>      
   <p>Cerca la farmacia più vicina con un click</p><br>
-  <a href="#ref"><button type="button">Scopri di più</button></a>
+  <a href="#comefunziona"><button type="button">Scopri di più</button></a>
 </div>
   
-<div class="explanation" id="ref"> 
+<div class="explanation" id="comefunziona"> 
     <h1>Come funziona: </h1><br>
       <p>Scopri la nuova applicazione web che consente di trovare la farmacia più vicina a casa tua.
-        <br>Inserire le coordinate geografiche o semplicemente il tuo indirizzo e scoprirai subito l'indirizzo più comodo per te.
+        <br>Inserire le coordinate geografiche o semplicemente il tuo indirizzo e scoprirai subito la farmacia più comodo per te.
       </p>
 </div>
 
 <div class="row search">
-    <div class="col-sm-6">
-      <br><p>Inserisci le coordinate geografiche: </p><br>      
+    <div class="col-sm-6">  
       <form action="http://localhost:3000/" method="POST">
         <label>Esempio: [45.459839, 9.147159]</label><br>
-        <input type="text" name="coordinates"><br><br>
-       <button type="submit">Cerca</button><br>
-      </form>
-
-    </div>
+        <input type="text" name="coordinates" placeholder="Inserisci le coordinate"><br><br>
+        <button type="submit">Cerca</button><br>  
+        <!-- <button onclick="show_result('Nome farmacia', 'Via cavour 74', '35767574567', 56, 30)" type="submit">Cerca</button><br> -->
+      </form> 
+      </div>
     <div class="col-sm-6"> 
-      <br><p>Inserisci il tuo indirizzo</p><br>
       <form action="http://localhost:3000/" method="POST">
         <label>Esempio: Piazza Duomo, 10, Milano</label><br>
-        <input type="text" name="address"><br><br>
+        <input type="text" name="address" placeholder="Inserisci l'indirizzo"><br><br>
         <button type="submit">Cerca</button>
       </form> 
     </div>
 </div><br><br>
+
+<div id="result">
+  <p class='explanation' style="text-align:center">Ecco la farmacia più vicina: </p>
+  <div class="row search">
+    <div class="col-sm-6">
+        <p id="farmacia">Nome Farmacia</p>  
+        <p id="indirizzo">Indirizzo:</p>
+        <p id="tel">Numero telefono:</p>
+    </div>
+    <div class="col-sm-6">  
+      <br><p id="feet">minuti a piedi</p>
+      <p id="car">minuti in macchina</p>
+    </div>
+  </div>
+  <div class="row search">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4"><button onclick="hide_result()" type="submit">Nuova ricerca</button></div>
+    <div class="col-sm-4"></div>
+  </div>
+</div>
+
 </body>
 
 <footer>
