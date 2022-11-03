@@ -64,4 +64,4 @@ npm start
 
 - è necessario inoltre installare mongodb in locale o collegarsi in remote per creare un db di nome 'farmacy' e
 popolarlo con le informazioni presenti a questo link https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano
-- Cercando localhost:3000 e scrindo delle coordinate geografiche oppure un indirizzo comparirà il risultato per ripetere la ricerca cliccare in alto a sinistra sulla ciliegia 
+- Cercando localhost:3000 e scrivendo delle coordinate geografiche oppure un indirizzo comparirà il risultato per ripetere la ricerca cliccare in alto a sinistra sulla ciliegia 
