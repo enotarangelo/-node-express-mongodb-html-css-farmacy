@@ -33,7 +33,7 @@ back-end: nodejs, express, mongodb
 - utils.js : permette di filtrare input [latitudine, longitudine] restituendo un array di double con le coordinate 
 
 # Per eseguire l'applicazione è necessario:
-- Scaricare nodejs  [Node.js website](https://nodejs.org/)  <hr>
+- Scaricare nodejs  [Node.js website](https://nodejs.org/) 
 - Verificare la corretta installazione:
 node --version
 npm --version
