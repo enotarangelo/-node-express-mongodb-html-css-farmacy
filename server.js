@@ -52,10 +52,10 @@ app.post('/', async (req, res) => {
     });
 
 
-    geocoder.geocode(address, async function(err, res) { 
+    geocoder.geocode(address, async function(err, ris) { 
         //console.log(res[0].latitude +' ' + res[0].longitude);
-        latitudine = res[0].latitude;
-        longitudine = res[0].longitude;
+        latitudine = ris[0].latitude;
+        longitudine = ris[0].longitude;
         ris_db= await dbFunctions.getCoordinates(longitudine, latitudine)
         farm= ris_db[0].properties.DENOM_FARMACIA;
         ind= ris_db[0].properties.INDIRIZZO;
