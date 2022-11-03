@@ -3,10 +3,10 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
-const util= require('./modules/utils');
-const time_distance= require('./modules/distance')
-const address_to_coordinate= require('./modules/adress_to_coordinates');
-const mongodb= require('./modules/mongodb')
+const util= require('./utils');
+const time_distance= require('./distance')
+const address_to_coordinate= require('./adress_to_coordinates');
+const mongodb= require('./mongodb')
 
 var farm, ind, time_feet, time_car, latitudine, longitudine, lat_f, lon_f;
 
