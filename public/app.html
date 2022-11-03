@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cherry | Farmacy</title>
+  <!-- icon -->
+  <link rel="shortcut icon" href="/public/img/logo.webp" type="image/x-icon" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <!-- main css -->
+  <link rel="stylesheet" href="/public/app.css" />
+</head>
+<body>
 
+<nav class="nav primary-nav">
+    <ul>
+        <li><a href="./public/app.html"><img src="./public/img/logo.webp" style="width:50px" alt="Image"></a></li>
+        <li>Cherry</li>
+    </ul>
+</nav>
+
+<div class="intro">
+  <img src="/public/img/logo_farmacy.png" style="width:15%" alt="Image">
+  <h1>Cherry <span style="color:#FC2438">Farmacy</span></h1>      
+  <p>Cerca la farmacia più vicina con un click</p><br>
+  <a href="#ref"><button type="button">Scopri di più</button></a>
+</div>
+  
+<div class="explanation" id="ref"> 
+    <h1>Come funziona: </h1><br>
+      <p>Scopri la nuova applicazione web che consente di trovare la farmacia più vicina a casa tua.
+        <br>Inserire le coordinate geografiche o semplicemente il tuo indirizzo e scoprirai subito l'indirizzo più comodo per te.
+      </p>
+</div>
+
+<div class="row search">
+    <div class="col-sm-6">
+      <br><p>Inserisci le coordinate geografiche: </p><br>      
+      <form action="http://localhost:3000/" method="POST">
+        <label>Esempio: [45.459839, 9.147159]</label><br>
+        <input type="text" name="coordinates"><br><br>
+       <button type="submit">Cerca</button><br>
+      </form>
+
+    </div>
+    <div class="col-sm-6"> 
+      <br><p>Inserisci il tuo indirizzo</p><br>
+      <form action="http://localhost:3000/" method="POST">
+        <label>Esempio: Piazza Duomo, 10, Milano</label><br>
+        <input type="text" name="address"><br><br>
+        <button type="submit">Cerca</button>
+      </form> 
+    </div>
+</div><br><br>
+</body>
+
+<footer>
+  <p>©2022 Cherry Farmacy - Elisa Notarangelo</p>
+</footer>
+</html>

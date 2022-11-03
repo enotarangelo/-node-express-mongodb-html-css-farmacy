@@ -1,0 +1,52 @@
+@import url(//db.onlinewebfonts.com/c/d04ad15ef66bc1f1295f87feee19dee2?family=ComoW01-Bold);
+@import url(//db.onlinewebfonts.com/c/3c1801cd200840b2b142cc3abc14d5c9?family=ComoW01-Light);
+
+body{
+    font-family: 'ComoW01-Bold';
+    font-size: 25px;
+}
+
+ul, .intro, .search, .explanation, footer, .search, .intro{
+    padding: 2%;
+}
+
+li {
+    display: inline-block;
+    color: #2F4858;
+    font-size: 40px;
+}
+
+.intro{
+    background-color: #FFF;
+    color: #2F4858;  
+}
+
+.explanation{
+    background-color: #FC2438;  
+    color:#FFF;
+    text-align: left;
+}
+
+.search{
+    font-family: 'ComoW01-Light';
+    font-weight: bold;
+    
+}
+
+label{
+    font-size: 20px;
+}
+
+input[type=button], input[type=submit], input[type=reset], button,footer{
+    background-color: #2F4858;
+    border: none;  
+    padding: 15px 32px;
+    border-radius: 100px;
+    color:#FFF;
+    font-size: medium;
+}
+
+footer, .search, .intro{
+    border-radius: 0%;
+    text-align: center;
+}
