@@ -67,11 +67,4 @@ npm start
 
 # Interfaccia
 
-/../public/img/cherry_farmacy1.png
-/../public/img/cherry_farmacy2.png
-
-Risultato della ricerca
-/../public/img/cherry_farmacy_ok.png
-
-In caso di errore
-/../public/img/cherry_farmacy_error.png
+<img src="https://github.com/enotarangelo/node-express-mongodb-html-css-farmacy/blob/main/public/img/cherry_farmacy1.png" width="128"/>
