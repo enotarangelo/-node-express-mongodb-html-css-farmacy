@@ -19,10 +19,12 @@ Output: Azienda Farmaceutica Municipale n.13
 
 Travel times: 5min (walk), 3min (car) 
 
-# Tecnologie:
-Front-end: HTML, CSS
+# Stack:
+Frontend: HTML, CSS
 
-Back-end: nodejs, express, mongodb 
+Backend: Node.js, Express, MongoDB
+
+Strumenti: GitHub, VSCode, CLI, 
 
 # Per eseguire l'applicazione è necessario:
 - Scaricare nodejs  [Node.js website](https://nodejs.org/) 
@@ -50,7 +52,8 @@ npm i -g "nome dependencies"
 
 npm start
 
-- è necessario inoltre installare mongodb in locale o collegarsi in remote per creare un db di nome 'farmacy' una collection di nome 'farmacy' e popolarlo (add data -> insert document) con le informazioni presenti a questo link https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano (in particolare importando i dati dal formato geojson https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano/resource/8cc1abb8-fe10-4f50-b7b4-e673250f34c6 presenti nel file source.txt)
+- è necessario inoltre installare mongodb in locale o collegarsi in remote per creare un db di nome 'farmacy' una collection di nome 'farmacy' e popolarlo (add data -> insert document) con le informazioni presenti a questo link https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano (in particolare importando i dati dal formato geojson https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano/resource/8cc1abb8-fe10-4f50-b7b4-e673250f34c6 presenti nel file source.txt), inoltre è necessario creare un indice sul field geometry.coordinates con il tipo (2DSPHERE)
+
 - Cercando http://localhost:3000/public/app.html e scrivendo delle coordinate geografiche oppure un indirizzo comparirà il risultato.
 
 # Interfaccia

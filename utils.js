@@ -7,8 +7,7 @@ module.exports = {
          return ris.split(',').map(Number);
       }catch{
          throw 500;
-      }
-     
+      }  
      },
 
    //la funziona controlla che l'input relatico alle coordinate sia in formato corretto restituendo true altrimenti restituisce false
@@ -32,7 +31,7 @@ module.exports = {
       var haversine = require("haversine-distance");   
       var haversine_m = haversine(point1, point2); //Results in meters (default)
       var haversine_km = haversine_m /1000; //Results in kilometers
-   
+      
       //Tempo a piedi - 0.9 m/s 
       var time_feet= Math.floor( (haversine_m /0.9)/60);  
       console.log("Time by feet: " + time_feet + " min");
