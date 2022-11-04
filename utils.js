@@ -1,5 +1,6 @@
 module.exports = {
-
+   /**la funzione prende ingresso una stringa "[latitudine, longitudine]" e 
+   restituisce una lista di tipo numerico contentente latitudine e longitudine*/
    string_to_coordinates: (coordinates)=>{
       try{
          let ris= coordinates.replace(' ', '').replace('[', '').replace(']', '').replace('"', '').replace('"', '');
@@ -10,7 +11,7 @@ module.exports = {
      
      },
 
-
+   //la funziona controlla che l'input relatico alle coordinate sia in formato corretto restituendo true altrimenti restituisce false
    check_coordinates: (coordinates)=>{
       let bool= false;
       let ris= coordinates.replace(' ', '').replace('"', '').replace('"', '').replace('[', '').replace(']', '');
@@ -25,6 +26,24 @@ module.exports = {
       return bool;
    },
 
+   //date due coordinate geografiche restituisce una lista con la distanza stimata a piedi e in macchina
+   //Soluzione alternativa con google-distance dove è possibile selezionare // mode - 'driving' (default) | 'walking' | 'bicycling' MA problema con api/costi
+   time_2_point: (point1, point2)=>{
+      var haversine = require("haversine-distance");   
+      var haversine_m = haversine(point1, point2); //Results in meters (default)
+      var haversine_km = haversine_m /1000; //Results in kilometers
+   
+      //Tempo a piedi - 0.9 m/s 
+      var time_feet= Math.floor( (haversine_m /0.9)/60);  
+      console.log("Time by feet: " + time_feet + " min");
+      
+      //Tempo in macchina - 2 m/s
+      var time_car= Math.floor( (haversine_m /2)/60);  
+      console.log("Time by car: " + time_car + " min");
+      return [time_feet, time_car]
+},
+
+   //codice html iniziale della pagina relativa ai risultati
    html_result : `
    <head>
      <title>Cherry | Farmacy</title>
@@ -53,8 +72,9 @@ module.exports = {
        <p>Ecco la farmacia più vicina: </p><br>
        <p>___________</p><br>`,
    
+   //codice html finale della pagina relativa ai risultati
    html_result_end:`<a href="./public/app.html"><button type="button" style="background-color: #2F4858; border: none;  padding: 15px 32px; border-radius: 100px; color:#FFF; font-size: medium;">Nuova ricerca</button></a><br>
-   </div>
- </body>`
+                     </div>
+                     </body>`
 	
 }

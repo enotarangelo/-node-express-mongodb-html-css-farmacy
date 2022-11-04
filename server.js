@@ -4,23 +4,17 @@ const app = express();
 const bodyParser = require('body-parser');
 var NodeGeocoder = require('node-geocoder');
 var geocoder = NodeGeocoder({
-    provider: 'openstreetmap',
-  });
+provider: 'openstreetmap',
+});
 
 //created modules
 const utils= require('./utils');
-const time_distance= require('./distance')
-//const atc= require('./address_to_coordinates');
 const database= require('./database')
-const dbFunctions= require('./dbFunctions')
-//const atc=require('./address_to_coordinates')
- 
+const dbFunctions= require('./dbFunctions') 
 const port = 3000
 
 app.use(express.static(__dirname));
-
 app.use(bodyParser.urlencoded({ extended: true })); 
-
 app.post('/', async (req, res) => {
   let coordinates= JSON.stringify(req.body.coordinates);
   let address=  JSON.stringify(req.body.address);
@@ -45,12 +39,12 @@ app.post('/', async (req, res) => {
         lat_f= ris_db[0].properties.LAT;
         lon_f= ris_db[0].properties.LNG;
         //distanza a piedi e in macchina
-        var time_dis= time_distance({ lat: latitudine, lng: longitudine },  { lat: lat_f, lng: lon_f });
+        var time_dis= utils.time_2_point({ lat: latitudine, lng: longitudine },  { lat: lat_f, lng: lon_f });
         time_feet= time_dis[0];
         time_car= time_dis[1];
         //res.send(farm +'Indirizzo: '+ ind + '\n Numero di telefono: '+ tel+ '\n '+ time_feet+ ' minuti a piedi \n'+time_car +' minuti in macchina')
         res.send(utils.html_result+`
-            <h1>`+farm +`</h1>
+            <h1 style='color:#FC2438'>`+farm +`</h1>
             <p>`+ind+`</p>
             <p>`+tel+`</p>
             <p>`+time_feet+` minuti a piedi</p>
@@ -60,11 +54,6 @@ app.post('/', async (req, res) => {
       }
     }
     if (typeof address !== 'undefined') {
-      var NodeGeocoder = require('node-geocoder');
-      var geocoder = NodeGeocoder({
-      provider: 'openstreetmap',
-      });
-
       geocoder.geocode(address, async function(err, ris) { 
         if (ris.length===0){
           res.sendFile(path.join(__dirname+'/public/error.html'))
@@ -79,11 +68,11 @@ app.post('/', async (req, res) => {
           lat_f= ris_db[0].properties.LAT;
           lon_f= ris_db[0].properties.LNG;
           //distanza a piedi e in macchina
-          var time_dis= time_distance({ lat: latitudine, lng: longitudine },  { lat: lat_f, lng: lon_f });
+          var time_dis= utils.time_2_point({ lat: latitudine, lng: longitudine },  { lat: lat_f, lng: lon_f });
           time_feet= time_dis[0];
           time_car= time_dis[1];
           res.send(utils.html_result+`
-          <h1>`+farm +`</h1>
+          <h1 style='color:#FC2438'>`+farm +`</h1>
           <p>`+ind+`</p>
           <p>`+tel+`</p>
           <p>`+time_feet+` minuti a piedi</p>
