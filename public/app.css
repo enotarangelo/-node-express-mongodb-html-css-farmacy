@@ -7,7 +7,7 @@ body{
     overflow-x: hidden;
 }
 
-ul, .intro, .search, .explanation, footer, .search, .intro{
+ul, .intro, .search, .explanation, footer, .search, .error, .error_button{
     padding: 2%;
 }
 
@@ -22,16 +22,11 @@ li {
     color: #2F4858;  
 }
 
-.explanation, .explanation_res{
-    background-color: #FC2438;  
-    color:#FFF;
+.explanation{
     text-align: left;
     padding-top: 2%;
 }
 
-.explanation_res{
-    text-align: center;
-}
 
 .search{
     font-family: 'ComoW01-Light';
@@ -53,13 +48,12 @@ input[type=button], input[type=submit], input[type=reset], button,footer{
     font-size: medium;
 }
 
-#result{
-    padding-bottom: 5%;
-    display: none; 
+.explanation, .error{
+    background-color:#FC2438; 
+    color:#FFF;
 }
 
-
-footer, .search, .intro{
+footer, .search, .intro, .error, .error_button{
     border-radius: 0%;
     text-align: center;
 }

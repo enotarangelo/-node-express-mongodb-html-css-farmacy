@@ -28,10 +28,10 @@ back-end: nodejs, express, mongodb
 - public: 
   - img: contiene le immagini dei loghi
   - app.html: è l'interfaccia dell'applicazione da dove è possibile svolgere le richieste 
-  - result.html : è la pagine risultato dove viene visualizzato il risultato della ricerca
+  - error.html : è la pagine che appare in caso di errore
   - app.css : contiene le istruzioni css con la grafica delle pagine html
 - server.js : è il server locale 
-- address_to_coordinates.js: restituisce le coordinate geografiche di un indirizzo
+- address_to_coordinates.js: restituisce le coordinate geografiche di un indirizzo (????)
 - distance.js: restituisce la distanza a piedi e in macchina tra due punti
 - mongodb.js: restituisce i dati della farmacia più vicina (nome farmacia, indirizzo, latitudine e longitudine)
 - utils.js : permette di filtrare input [latitudine, longitudine] restituendo un array di double con le coordinate 
@@ -62,6 +62,5 @@ npm i -g "nome dependencies"
 
 npm start
 
-- è necessario inoltre installare mongodb in locale o collegarsi in remote per creare un db di nome 'farmacy' e
-popolarlo con le informazioni presenti a questo link https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano
-- Cercando localhost:3000 e scrivendo delle coordinate geografiche oppure un indirizzo comparirà il risultato per ripetere la ricerca cliccare in alto a sinistra sulla ciliegia 
+- è necessario inoltre installare mongodb in locale o collegarsi in remote per creare un db di nome 'farmacy' una collection di nome 'farmacy' e popolarlo con le informazioni presenti a questo link https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano (in particolare importando i dati dal formato geojson https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano/resource/8cc1abb8-fe10-4f50-b7b4-e673250f34c6)
+- Cercando http://localhost:3000/public/app.html e scrivendo delle coordinate geografiche oppure un indirizzo comparirà il risultato.

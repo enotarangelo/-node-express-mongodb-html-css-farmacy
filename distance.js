@@ -30,12 +30,12 @@ distance.get(
     
     //console.log("distance (in meters): " + haversine_m + "m");
   
-    //Tempo a piedi - 1,38889 m/s 
-    var time_feet= Math.floor( (haversine_m /1.38889)/60);  
+    //Tempo a piedi - 0.9 m/s 
+    var time_feet= Math.floor( (haversine_m /0.9)/60);  
     console.log("Time by feet: " + time_feet + " min");
     
-    //Tempo in macchina - 3,5 m/s
-    var time_car= Math.floor( (haversine_m /3.5)/60);  
+    //Tempo in macchina - 2 m/s
+    var time_car= Math.floor( (haversine_m /2)/60);  
     console.log("Time by car: " + time_car + " min");
    return [time_feet, time_car]
 }
