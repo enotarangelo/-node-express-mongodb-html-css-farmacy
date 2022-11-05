@@ -81,5 +81,6 @@ npm start
 - database.js: permette di connettersi al database MongoDB
 - dbFunctions.js: contiene le funzioni per interrogare il database MongoDB
 - utils.js : contiene le funzioni utilizzate da server.js per filtrare e controllare l'input, calcolare la distanza tra due coordinate e gestire output del risultato
-- Test.js consente di testare la correttezza di alcune funzioni con il modulo Mocha
-- Farmacy.postman_collection_test test con GET e POST svolti su POSTMAN
+- Test 
+  - Test.js consente di testare la correttezza di alcune funzioni con il modulo Mocha
+  - Farmacy.postman_collection_test test con GET e POST svolti su POSTMAN

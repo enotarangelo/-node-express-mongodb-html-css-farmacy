@@ -6,7 +6,7 @@ const chai = require('chai')
 const expect = chai.expect
 
 // Importing utils.js where our code is written
-const Utils = require('./utils')
+const Utils = require('../utils')
 
 describe('Utils', function () {
   

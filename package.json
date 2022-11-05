@@ -4,7 +4,7 @@
   "description": "L'obiettivo del progetto è quello di creare un'applicazione web in grado di restituire la farmacia di Milano più vicina in base a delle coordinate geografiche oppure in base a un indirizzo.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha utils_Test.js",
+    "test": "mocha ./test/utils_Test.js",
     "start": "nodemon server.js"
   },
   "author": "",
