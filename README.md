@@ -56,8 +56,6 @@ npm start
 
 - Cercando http://localhost:3000/public/app.html e scrivendo delle coordinate geografiche oppure un indirizzo comparirà il risultato.
 
-# Video
-<video  width="1000" controls><source src="./public/videos/Cherry_Farmacy_video.mp4" type="video/mp4"><video>
 # Interfaccia
 
 <img src="https://github.com/enotarangelo/node-express-mongodb-html-css-farmacy/blob/main/public/img/cherry_farmacy1.png" width="1000"/>
