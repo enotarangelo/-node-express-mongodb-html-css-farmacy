@@ -36,7 +36,7 @@ describe('Utils', function () {
         expect(fare).to.equal(false)
     })
 
-    it('mi aspetto restituisca 29829 min a piedi e 13423 in macchina', () => {
+    it('mi aspetto restituisca 43 min a piedi e 19 in macchina', () => {
         let point1={ lat: 45.459839, lng: 9.147159 };  
         let point2={ lat: 45.459839, lng: 9.177159   };
         let fare = Utils.time_2_point(point1, point2)
