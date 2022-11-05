@@ -52,7 +52,7 @@ npm i -g "nome dependencies"
 
 npm start
 
-- è necessario inoltre installare mongodb in locale o collegarsi in remote per creare un db di nome 'farmacy' una collection di nome 'farmacy' e popolarlo (add data -> insert document) con le informazioni presenti a questo link https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano (in particolare importando i dati dal formato geojson https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano/resource/8cc1abb8-fe10-4f50-b7b4-e673250f34c6 presenti nel file source.txt), inoltre è necessario creare un indice sul field geometry.coordinates con il tipo (2DSPHERE)
+- è necessario inoltre installare mongodb in locale o collegarsi in remote per creare un db di nome 'farmacy' una collection di nome 'farmacy' e popolarlo (add data -> insert document) con le informazioni presenti a questo link https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano (in particolare importando i dati dal formato geojson https://dati.comune.milano.it/dataset/ds501_farmacie-nel-comune-di-milano/resource/8cc1abb8-fe10-4f50-b7b4-e673250f34c6 oppure presenti nel cartella source nel file farmacy_source.json), inoltre è necessario creare un indice sul field geometry.coordinates con il tipo (2DSPHERE) per consentire successivamente la ricerca della farmacia più vicina
 
 - Cercando http://localhost:3000/public/app.html e scrivendo delle coordinate geografiche oppure un indirizzo comparirà il risultato.
 
@@ -84,3 +84,5 @@ npm start
 - Test 
   - Test.js consente di testare la correttezza di alcune funzioni con il modulo Mocha
   - Farmacy.postman_collection_test test con GET e POST svolti su POSTMAN
+- source 
+  -contiene il file json da importare su MongoDB 
