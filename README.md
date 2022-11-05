@@ -68,6 +68,7 @@ npm start
 <img src="https://github.com/enotarangelo/node-express-mongodb-html-css-farmacy/blob/main/public/img/cherry_farmacy_error.png" width="1000"/>
 
 ## Errore di connessione
+<img src="https://github.com/enotarangelo/node-express-mongodb-html-css-farmacy/blob/main/public/img/cherry_farmacy_no_connection.png" width="1000"/>
 
 # File:
 - public: 
