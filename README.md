@@ -24,7 +24,7 @@ Frontend: HTML, CSS
 
 Backend: Node.js, Express, MongoDB
 
-Strumenti: GitHub, VSCode, CLI, 
+Strumenti: GitHub, VSCode, CLI 
 
 # Per eseguire l'applicazione è necessario:
 - Scaricare nodejs  [Node.js website](https://nodejs.org/) 
@@ -71,9 +71,11 @@ npm start
 - public: 
   - img: contiene le immagini dei loghi e dell'interfaccia
   - app.html: è l'interfaccia dell'applicazione da dove è possibile svolgere le richieste 
-  - error.html : è la pagine che appare in caso di errore
+  - error.html : è la pagine che appare in caso di errore relativo ai dati inseriti
+  - no_connection.html: è la pagina che appare in caso di errore di connessione
   - app.css : contiene le istruzioni css con la grafica delle pagine html
 - server.js : è il server locale 
 - database.js: permette di connettersi al db
 - dbFunctions.js: contiene le funzioni per interrogare il db
 - utils.js : contiene le funzioni utilizzate da server.js per filtrare e controllare l'input, calcolare la distanza tra due coordinate e gestire output del risultato
+- Test.js consente di testare la correttezza dell'applicazione con Mocha

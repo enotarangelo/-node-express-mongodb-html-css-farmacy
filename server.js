@@ -1,6 +1,6 @@
-const path= require('path');
 const express = require('express');
 const app = express();
+const path= require('path');
 const bodyParser = require('body-parser');
 var NodeGeocoder = require('node-geocoder');
 var geocoder = NodeGeocoder({
@@ -21,7 +21,7 @@ app.post('/', async (req, res) => {
   let address=  JSON.stringify(req.body.address);
 
   //Se le coordinate o l'indirizzo non sono stati inseriti restituisce la pagina di errore
-  if ( (typeof coordinates === 'undefined' && address.length === 2)||(typeof address === 'undefined' && coordinates.length === 2)) {
+  if ((typeof coordinates === 'undefined' && typeof address === 'undefined') || (typeof coordinates === 'undefined' && address.length === 2)||(typeof address === 'undefined' && coordinates.length === 2)) {
     res.sendFile(path.join(__dirname+'/public/error.html'))
   }
   else{
@@ -60,36 +60,41 @@ app.post('/', async (req, res) => {
       }
     }
     if (typeof address !== 'undefined') {
-      geocoder.geocode(address, async function(err, ris) { 
-        //se l'indirizzo non è corretto restituisce la pagina di errore
-        if (ris.length===0){
-          res.sendFile(path.join(__dirname+'/public/error.html'))
-        }else{
-          //restituisce le coordinate geografiche dell'indirizzo inserito
-          latitudine = ris[0].latitude;
-          longitudine = ris[0].longitude;
-          //restituisce la farmacia più vicina alle coordinate
-          ris_db= await dbFunctions.getCoordinates(longitudine, latitudine)
-          farmacia= ris_db[0].properties.DENOM_FARMACIA;
-          indirizzo= ris_db[0].properties.INDIRIZZO;
-          tel= ris_db[0].properties.TELEFONO;
-          console.log(farmacia +' '+ indirizzo + ' '+ tel)
-          lat_f= ris_db[0].properties.LAT;
-          lon_f= ris_db[0].properties.LNG;
-          //restituisce una lista con la distanza a piedi e in macchina
-          var time_dis= utils.time_2_point({ lat: latitudine, lng: longitudine },  { lat: lat_f, lng: lon_f });
-          time_feet= time_dis[0];
-          time_car= time_dis[1];
-          //restituisce una pagina html con i risultati 
-          res.send(utils.html_result+`
-          <h1 style='color:#FC2438'>`+farmacia +`</h1>
-          <p>`+indirizzo+`</p>
-          <p>`+tel+`</p>
-          <p>`+time_feet+` minuti a piedi</p>
-          <p>`+time_car+` minuti in macchina</p><br>
-          `+utils.html_result_end
-          )                       
-        }        
+      geocoder.geocode(address, async function(err, ris) {
+        //il try catch consente di gestire la problematica relativa alla connessione assente
+        try{
+          //se l'indirizzo non è corretto restituisce la pagina di errore
+          if (ris.length===0){
+            res.sendFile(path.join(__dirname+'/public/error.html'))
+          }else{
+            //restituisce le coordinate geografiche dell'indirizzo inserito
+            latitudine = ris[0].latitude;
+            longitudine = ris[0].longitude;
+            //restituisce la farmacia più vicina alle coordinate
+            ris_db= await dbFunctions.getCoordinates(longitudine, latitudine)
+            farmacia= ris_db[0].properties.DENOM_FARMACIA;
+            indirizzo= ris_db[0].properties.INDIRIZZO;
+            tel= ris_db[0].properties.TELEFONO;
+            console.log(farmacia +' '+ indirizzo + ' '+ tel)
+            lat_f= ris_db[0].properties.LAT;
+            lon_f= ris_db[0].properties.LNG;
+            //restituisce una lista con la distanza a piedi e in macchina
+            var time_dis= utils.time_2_point({ lat: latitudine, lng: longitudine },  { lat: lat_f, lng: lon_f });
+            time_feet= time_dis[0];
+            time_car= time_dis[1];
+            //restituisce una pagina html con i risultati 
+            res.send(utils.html_result+`
+            <h1 style='color:#FC2438'>`+farmacia +`</h1>
+            <p>`+indirizzo+`</p>
+            <p>`+tel+`</p>
+            <p>`+time_feet+` minuti a piedi</p>
+            <p>`+time_car+` minuti in macchina</p><br>
+            `+utils.html_result_end
+            )                       
+          }    
+        }catch{
+          res.sendFile(path.join(__dirname+'/public/no_connection.html'))
+        }    
       });
     }
   } 

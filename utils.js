@@ -2,12 +2,8 @@ module.exports = {
    /**la funzione prende ingresso una stringa "[latitudine, longitudine]" e 
    restituisce una lista di tipo numerico contentente latitudine e longitudine*/
    string_to_coordinates: (coordinates)=>{
-      try{
-         let ris= coordinates.replace(' ', '').replace('[', '').replace(']', '').replace('"', '').replace('"', '');
-         return ris.split(',').map(Number);
-      }catch{
-         throw 500;
-      }  
+      let ris= coordinates.replace(' ', '').replace('[', '').replace(']', '').replace('"', '').replace('"', '');
+      return ris.split(',').map(Number); 
      },
 
    //la funziona controlla che l'input relatico alle coordinate sia in formato corretto restituendo true altrimenti restituisce false
@@ -33,11 +29,13 @@ module.exports = {
       var haversine_km = haversine_m /1000; //Results in kilometers
       
       //Tempo a piedi - 0.9 m/s 
-      var time_feet= Math.floor( (haversine_m /0.9)/60);  
+      var time_feet= Math.floor( (haversine_m /0.9)/60);
+      if(time_feet===0){time_feet=1;} //nel caso in cui la distanza fosse inferiore a 0 
       console.log("Time by feet: " + time_feet + " min");
       
       //Tempo in macchina - 2 m/s
-      var time_car= Math.floor( (haversine_m /2)/60);  
+      var time_car= Math.floor( (haversine_m /2)/60);
+      if(time_car===0){time_car=1;}  //nel caso in cui la distanza fosse inferiore a 0 
       console.log("Time by car: " + time_car + " min");
       return [time_feet, time_car]
 },
