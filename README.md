@@ -24,7 +24,7 @@ Frontend: HTML, CSS
 
 Backend: Node.js, Express, MongoDB
 
-Strumenti: GitHub, VSCode, CLI 
+Strumenti: GitHub, VSCode, CLI, Postman
 
 # Per eseguire l'applicazione è necessario:
 - Scaricare nodejs  [Node.js website](https://nodejs.org/) 
@@ -82,3 +82,4 @@ npm start
 - dbFunctions.js: contiene le funzioni per interrogare il database MongoDB
 - utils.js : contiene le funzioni utilizzate da server.js per filtrare e controllare l'input, calcolare la distanza tra due coordinate e gestire output del risultato
 - Test.js consente di testare la correttezza di alcune funzioni con il modulo Mocha
+- Farmacy.postman_collection_test test con GET e POST svolti su POSTMAN

@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "de7ebef2-e5c2-4904-9c41-a74bb7f648dd",
+		"name": "Farmacy",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23482031"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "address",
+						"value": "Piazza irnerio 6 Milano",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "address",
+							"value": "Piazza Irnerio 6 Milano ",
+							"type": "text"
+						},
+						{
+							"key": "coordinates",
+							"value": "[45.459839, 9.147159]",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "address ",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "coordinates",
+							"value": "",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "address",
+							"value": "lkjhlkjhlkjhlkjl",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "coordinates",
+							"value": "agdfsgjkdòlkgsjdò",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "Piazza Irnerio 6 Milano",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/public/app.html",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"public",
+						"app.html"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
